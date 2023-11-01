@@ -41,9 +41,9 @@ export default class StepSlider {
     this.progressBar = this.elem.querySelector('.slider__progress');
     this.stepsHolder = this.elem.querySelectorAll('.slider__steps span');
 
-    this.thumbSlider.style.left = `${this.value/this.steps * 100}%`;
+    this.thumbSlider.style.left = `${this.value/(this.steps - 1) * 100}%`;
     this.thumbValue.textContent = this.value + 1;
-    this.progressBar.style.width = `${this.value/this.steps * 100}%`;
+    this.progressBar.style.width = `${this.value/(this.steps - 1) * 100}%`;
     this.stepsHolder[this.value].classList.add('slider__step-active');
   }
 
