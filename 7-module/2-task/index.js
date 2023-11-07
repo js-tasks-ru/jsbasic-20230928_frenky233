@@ -37,11 +37,11 @@ export default class Modal {
   }
 
   setBody(node) {
-    this.elem.querySelector('.modal__body').innerHTML = node.outerHTML;
+    this.elem.querySelector('.modal__body').append(node);
   }
 
   onClick = (event) => {
-    const button = event.target.closest('button');
+    const button = event.target.closest('.modal__close');
     if(button){
       this.close();
     }
